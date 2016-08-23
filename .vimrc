@@ -1,5 +1,7 @@
 set nocompatible                                    "We want the latest vim settings
 
+set rtp+=$HOME/.local/lib/python2.7/site-packages/powerline/bindings/vim/
+
 so ~/.vim/plugins.vim
 
 syntax enable
@@ -20,16 +22,18 @@ set nowrap
 set autoindent
 set pastetoggle=<F12>
 
-"set laststatus=2
-"set statusline=%<%f\                     
+set laststatus=2
+"set statusline+=%<%f\                     
 "set statusline+=%w%h%m%r                 
 "set statusline+=\ [%{&ff}/%Y]            
 "set statusline+=\ [%{getcwd()}]          
 "set statusline+=%=%-14.(%l,%c%V%)\ %p%%  
+"set statusline+=%{fugitive#statusline()}
                 
+
 "----------------Visuals--------------------"
 set t_Co=256					    "Use 256 colors. This is useful for terminal vim
-colorscheme atom-dark-256
+colorscheme jellybeans
 set linespace=15				    "Macvim-specific line-heigth
 
 set guioptions-=l                                   "Disable gui scrollbars 
@@ -62,13 +66,13 @@ nmap <C-L> <C-W><C-L>
 
 "----------------Mappings-------------------"
 "Make it easy to edit the Vimrc file.
-nmap <Leader>ev :e $MYVIMRC<cr>
+nmap <Leader>ev :sp $MYVIMRC<cr>
 
 "Make it easy to edit the plugins file.
-nmap <Leader>ep :e ~/.vim/plugins.vim<cr>
+nmap <Leader>ep :sp ~/.vim/plugins.vim<cr>
 
 "Add simple highlight removal
-nmap <Leader> :nohlsearch<cr>
+nmap <Leader><space> :nohlsearch<cr>
 
 "Make NERDTree easier to toggle.
 map <C-n> :NERDTreeToggle<CR>
@@ -83,6 +87,13 @@ nmap <Leader>r :CtrlPBufTag<cr>
 "Search in most recently used files
 nmap <Leader>e :CtrlPMRUFiles<cr>
 
+"Clear current buffer
+map <C-x> :bd<CR>
+
+"Save all shortcut
+nmap <C-s> :wa<CR>
+imap <C-s> <ESC>:wa<CR>
+
 
 
 "-------------Plugins--------------"
@@ -96,16 +107,30 @@ let g:ctrlp_match_window = 'top,order:ttb,min:1,max:30,results:30'
 "/ NERDTree
 "/
 let NERDTreeHijackNetrw = 0
-
+let NERDTreeShowBookmarks = 1
+let NERDTreeShowHidden = 1
+let NERDTreeBookmarksDort = 1
+let NERDTreeMinimalUI = 1
+let NERDTreeAutoCenter = 1
+let NERDTreeQuitOnOpen = 1
+let NERDTreeStatusline = 0
 "/
 "/ Greplace.vim
 "/
 set grepprg=ack
 let g:grep_cmd_opts = '--noheading'
 
+"/
+"/ Airline
+"/
+let g:airline_theme='tomorrow'
+let g:airline_powerline_fonts = 1
 
-
-
+"/
+"/ Bufexplorer
+"/
+let g:bufExplorerDefaultHelp=0
+let g:bufExplorerShowRelativePath=1 
 "-------------Laravel-Specific--------------"
 nmap <Leader>lr :e app/Http/routes.php<cr>
 nmap <Leader>lm :!php artisan make:
