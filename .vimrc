@@ -25,10 +25,8 @@ set autoindent
 set pastetoggle=<F12>
 set laststatus=2
 
-"swap files out of the project root
-set backupdir=~/.vim/backup//
-set directory=~/.vim/swap//
-
+"Disable swap file creation
+set noswapfile
 
 
 "----------------Visuals--------------------"
@@ -73,15 +71,15 @@ nmap <Leader>ep :sp ~/.vim/plugins.vim<cr>
 nmap <Leader><space> :nohlsearch<cr>
 
 "Make NERDTree easier to toggle.
-map <C-n> :NERDTreeToggle<CR>
+map <F7> :NERDTreeToggle<CR>
 
 "Cycle throught buffers
-nnoremap <silent> <C-F12> :BufExplorerHorizontalSplit<CR>
-nnoremap <silent> <C-F8> :bn<CR>
-nnoremap <silent> <C-F9> :bp<CR>
+nnoremap <silent> <F10> :ToggleBufExplorer<CR>
+nnoremap <silent> <F8> :bn<CR>
+nnoremap <silent> <F9> :bp<CR>
 
 "Search methods in file
-nmap <Leader>r :CtrlPBufTag<cr>
+nmap <Leader>m :CtrlPBufTag<cr>
 
 "Search in most recently used files
 nmap <Leader>e :CtrlPMRUFiles<cr>
@@ -96,7 +94,8 @@ imap <C-s> <ESC>:wa<CR>
 "Insert new line in normal mode
 nmap <C-o> o<Esc>
 
-
+"View the registry
+nmap <Leader>r :reg<CR>
 
 
 

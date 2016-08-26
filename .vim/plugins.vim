@@ -25,6 +25,8 @@ Plugin 'jlanzarotta/bufexplorer'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'scrooloose/syntastic'
+Plugin 'JulesWang/css.vim'
+Plugin 'genoma/vim-less'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
