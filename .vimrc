@@ -97,7 +97,8 @@ nmap <C-o> o<Esc>
 "View the registry
 nmap <Leader>r :reg<CR>
 
-
+"Close all buffers
+nmap <Leader>x :bufdo bd!<CR>
 
 "-------------Plugins--------------"
 "/
@@ -117,6 +118,7 @@ let NERDTreeMinimalUI = 1
 let NERDTreeAutoCenter = 1
 let NERDTreeQuitOnOpen = 1
 let NERDTreeStatusline = 0
+let g:NERDTreeIgnore=['.git','.idea']
 
 "/
 "/ Greplace.vim
