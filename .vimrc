@@ -22,8 +22,9 @@ set showmode                                        "Display the current mode
 set showmatch                                       "Show matching brakets
 set nowrap
 set autoindent
-set pastetoggle=<F12>
+set pastetoggle=<F5>
 set laststatus=2
+
 
 "Disable swap file creation
 set noswapfile
@@ -72,11 +73,13 @@ nmap <Leader><space> :nohlsearch<cr>
 
 "Make NERDTree easier to toggle.
 map <F7> :NERDTreeToggle<CR>
+map <F12> :TagbarOpenAutoClose<CR>
 
 "Cycle throught buffers
 nnoremap <silent> <F10> :ToggleBufExplorer<CR>
 nnoremap <silent> <F8> :bn<CR>
 nnoremap <silent> <F9> :bp<CR>
+nnoremap <silent> <F6> :b#<CR>
 
 "Search methods in file
 nmap <Leader>m :CtrlPBufTag<cr>
@@ -139,17 +142,15 @@ let g:bufExplorerDefaultHelp=0
 let g:bufExplorerShowRelativePath=1 
 let g:bufExplorerSplitBelow=0
 
-
-
-
-
-
 "/
 "/ Autopairs
 "/
 let g:AutoPairs={'[':']', '{':'}'} 
 
-
+"/
+"/ Javascript Libraries
+"/
+let g:used_javascript_libs = 'angularjs,angularui,angularuirouter'
 
 
 
@@ -171,3 +172,6 @@ augroup autosourcing
 	autocmd!	
 	autocmd BufWritePost .vimrc source % 
 augroup END
+
+autocmd BufNewFile,BufRead *.less set filetype=less
+autocmd FileType less set omnifunc=csscomplete#CompleteCSS
