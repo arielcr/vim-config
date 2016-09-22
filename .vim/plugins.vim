@@ -31,6 +31,7 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'othree/javascript-libraries-syntax.vim'
 Plugin 'majutsushi/tagbar'
 Plugin 'ludovicchabant/vim-gutentags'
+Plugin 'dietsche/vim-lastplace'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required

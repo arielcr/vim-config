@@ -37,7 +37,10 @@ set guioptions-=l                                   "Disable gui scrollbars
 set guioptions-=L
 set guioptions-=r
 set guioptions-=R
-
+set guioptions-=e                                   "We dont want gui tabs
+set guioptions-=m                                   "remove menu bar
+set guioptions-=T                                   "remove toolbar
+hi vertsplit guibg=bg                               "Get rid of ugly split borders
 
 
 
@@ -73,13 +76,17 @@ nmap <Leader><space> :nohlsearch<cr>
 
 "Make NERDTree easier to toggle.
 map <F7> :NERDTreeToggle<CR>
+imap <F7> <ESC>:NERDTreeToggle<CR>
 map <F12> :TagbarOpenAutoClose<CR>
+imap <F12> <ESC>:TagbarOpenAutoClose<CR>
 
 "Cycle throught buffers
 nnoremap <silent> <F10> :ToggleBufExplorer<CR>
+inoremap <silent> <F10> <ESC>:ToggleBufExplorer<CR>
 nnoremap <silent> <F8> :bn<CR>
 nnoremap <silent> <F9> :bp<CR>
 nnoremap <silent> <F6> :b#<CR>
+inoremap <silent> <F6> <ESC>:b#<CR>
 
 "Search methods in file
 nmap <Leader>m :CtrlPBufTag<cr>
@@ -175,3 +182,4 @@ augroup END
 
 autocmd BufNewFile,BufRead *.less set filetype=less
 autocmd FileType less set omnifunc=csscomplete#CompleteCSS
+
