@@ -24,7 +24,7 @@ set nowrap
 set autoindent
 set pastetoggle=<F5>
 set laststatus=2
-
+set guifont=Roboto\ Mono\ for\ Powerline\ 11
 
 "Disable swap file creation
 set noswapfile
