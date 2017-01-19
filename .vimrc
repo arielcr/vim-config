@@ -24,7 +24,7 @@ set nowrap
 set autoindent
 set pastetoggle=<F5>
 set laststatus=2
-set guifont=Roboto\ Mono\ for\ Powerline\ 11
+set clipboard=unnamedplus
 
 "Disable swap file creation
 set noswapfile
@@ -33,6 +33,7 @@ set noswapfile
 "----------------Visuals--------------------"
 set t_Co=256					    "Use 256 colors. This is useful for terminal vim
 colorscheme jellybeans
+set guifont=Roboto\ Mono\ for\ Powerline\ 11
 set guioptions-=l                                   "Disable gui scrollbars 
 set guioptions-=L
 set guioptions-=r
@@ -109,6 +110,10 @@ nmap <Leader>r :reg<CR>
 
 "Close all buffers
 nmap <Leader>x :bufdo bd!<CR>
+
+"Map the copy/paste shortcut to clipboard
+nnoremap y "+y
+vnoremap y "+y
 
 "-------------Plugins--------------"
 "/
