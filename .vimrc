@@ -115,6 +115,9 @@ nmap <Leader>x :bufdo bd!<CR>
 nnoremap y "+y
 vnoremap y "+y
 
+"Reformat code and center
+map <F4> mzgg=G`z
+
 "-------------Plugins--------------"
 "/
 "/ CtrlP
